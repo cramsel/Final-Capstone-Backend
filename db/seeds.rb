@@ -29,4 +29,18 @@ Post.create(
   description: "",
 )
 
+Comment.create(user_id: 1, post_id: 2, body: "Such a cool song")
+Comment.create(user_id: 1, post_id: 1, body: "Good to see you working on this")
+Comment.create(user_id: 1, post_id: 3, body: "Neat new song!")
+Comment.create(user_id: 1, post_id: 2, body: "Coming back to this song, still as cool now.")
+
+Comment.create(user_id: 2, post_id: 3, body: "Don't forget our upcoming concert on March 3rd, 2022!")
+Comment.create(user_id: 3, post_id: 3, body: "Wish I could go")
+Comment.create(user_id: 3, post_id: 1, body: "Not sure if I want to keep this one up, it's a bit iffy")
+Comment.create(user_id: 3, post_id: 1, body: "I guess I'll keep it up for now")
+
+Comment.create(user_id: 1, post_id: 3, body: "Can't wait to see you guys in person!")
+Comment.create(user_id: 3, post_id: 3, body: "Cool new song, like the chords")
+Comment.create(user_id: 1, post_id: 1, body: "Glad you're keeping it up!")
+
 puts "Seeds planted"
