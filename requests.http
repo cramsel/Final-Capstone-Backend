@@ -3,3 +3,17 @@ GET http://localhost:3000/users
 
 ###show user
 GET http://localhost:3000/users/3
+
+###create user
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "email": "testing@test.com",
+  "username": "test!",
+  "first_name": "testy",
+  "last_name": "test",
+  "description": "this is a test",
+  "password": "password",
+  "password_confirmation": "password"
+}
