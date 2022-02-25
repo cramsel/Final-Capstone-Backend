@@ -17,3 +17,22 @@ Content-Type: application/json
   "password": "password",
   "password_confirmation": "password"
 }
+
+
+
+###index posts
+get http://localhost:3000/posts
+
+###show post
+get http://localhost:3000/posts/1
+
+###create post
+post http://localhost:3000/posts
+Content-Type: application/json
+
+{
+  "user_id": "1",
+  "title": "Test Post",
+  "audio_url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3",
+  "description": "This is a test"
+}
