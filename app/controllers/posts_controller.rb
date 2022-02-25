@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   def create
     post = Post.new(
-      user_id: params[:user_id], #this will be changed to current user when sign in is introduced
+      user_id: current_user.id,
       title: params[:title],
       audio_url: params[:audio_url],
       description: params[:description],
