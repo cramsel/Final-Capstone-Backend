@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
   def show
     post = Post.find_by(id: params[:id])
-    render json: post
+    render json: post, include: "user,comments.user"
   end
 
   def create
