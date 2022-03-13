@@ -10,10 +10,13 @@ class PostsController < ApplicationController
   end
 
   def create
+    response = Cloudinary::Uploader.upload(params[:audio_file], resource_type: :auto)
+    cloudinary_url = response["secure_url"]
+
     post = Post.new(
       user_id: current_user.id,
       title: params[:title],
-      audio_url: params[:audio_url],
+      audio_url: cloudinary_url,
       description: params[:description],
     )
 
