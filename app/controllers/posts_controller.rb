@@ -18,6 +18,7 @@ class PostsController < ApplicationController
       title: params[:title],
       audio_url: cloudinary_url,
       description: params[:description],
+      audio_type: params[:audio_type] || true,
     )
 
     if post.save
