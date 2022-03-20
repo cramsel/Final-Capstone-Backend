@@ -1,5 +1,5 @@
 class PostSerializer < ActiveModel::Serializer
-  attributes :id, :audio_url, :title, :description
+  attributes :id, :audio_url, :title, :description, :audio_type
 
   belongs_to :user
   has_many :comments
