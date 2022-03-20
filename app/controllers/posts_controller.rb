@@ -10,19 +10,23 @@ class PostsController < ApplicationController
   end
 
   def create
-    response = Cloudinary::Uploader.upload(params[:audio_file], resource_type: :auto)
-    cloudinary_url = response["secure_url"]
+    if params[:audio_url]
+      audio = params[:audio_url]
+    else
+      response = Cloudinary::Uploader.upload(params[:audio_file], resource_type: :auto)
+      audio = response["secure_url"]
+    end
 
     post = Post.new(
       user_id: current_user.id,
       title: params[:title],
-      audio_url: cloudinary_url,
+      audio_url: audio,
       description: params[:description],
       audio_type: params[:audio_type] || true,
     )
 
     if post.save
-      render json: { message: "Audio Uploaded" }, status: :created
+      render json: { message: "Audio Saved" }, status: :created
     else
       render json: { message: post.errors.full_messages }, status: :bad_request
     end
